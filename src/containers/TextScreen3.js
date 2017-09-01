@@ -9,14 +9,14 @@ import {
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-export class TextScreen extends React.Component {
+export class TextScreen3 extends React.Component {
   static navigationOptions = {
     title: 'Type your text',
   };
 
   constructor(props) {
     super(props);
-    this.state ={text: 'your text'};
+    this.state ={text: 'Robin', text2: 'Batman'};
   }
 
   
@@ -31,8 +31,13 @@ export class TextScreen extends React.Component {
           value={this.state.text}
     />
 
+    <TextInput
+          onChangeText={(text2) =>this.setState({text2})}
+          value={this.state.text2}
+    />
+
       <Button
-        onPress={ () => this.props.navigation.navigate('Meme', {input: this.state.text})}
+        onPress={ () => this.props.navigation.navigate('Meme3', {input: this.state.text, input2: this.state.text2})}
         title="Meme it"
       />
     </View>
