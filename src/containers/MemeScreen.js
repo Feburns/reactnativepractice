@@ -5,9 +5,11 @@ import {
   View,
   TextInput,
   Image,
-  Button
+  Button,
+  ToastAndroid
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+
 
 
 
@@ -22,7 +24,10 @@ export class MemeScreen extends React.Component {
   }
 
   render() {
-    const {navigate} = this.props.navigation;
+    const navigate = this.props.navigation;
+    console.log('!',navigate);
+
+
     return (
       <View>
       <Text>
@@ -35,14 +40,10 @@ export class MemeScreen extends React.Component {
         style={{width: 320, height: 320}}
         source={require('../../img/meme1.jpg')}>
         <View style={{paddingTop: 60, width: 320, height: 120}}>
-          <TextInput style={ {fontSize: 20, fontFamily:'sans-serif-medium' , textAlign: 'center', backgroundColor: 'rgba(0,0,0,0)', color: 'white', position: "absolute", top:10,left:10, width:290}}
-          onChangeText={(text) =>this.setState({text})}
-          value={this.state.text}
-          />
-          <TextInput style={ {fontSize: 20, fontFamily:'sans-serif-medium' , textAlign: 'center', backgroundColor: 'rgba(0,0,0,0)', color: 'white', position: "absolute", bottom:-150,left:15, width:290}}
-          onChangeText={(text2) =>this.setState({text2})}
-          value={this.state.text2}
-          />
+          <Text style={ {fontSize: 20, fontFamily:'sans-serif-medium' , textAlign: 'center', backgroundColor: 'rgba(0,0,0,0)', color: 'white', position: "absolute", top:10,left:10, width:290}}
+          > ONE DOES NOT SIMPLY</Text>
+          <Text style={ {fontSize: 20, fontFamily:'sans-serif-medium' , textAlign: 'center', backgroundColor: 'rgba(0,0,0,0)', color: 'white', position: "absolute", bottom:-150,left:15, width:290}}
+          > {navigate.state.params.input} </Text>
         </View>
         </Image>
       </View>
