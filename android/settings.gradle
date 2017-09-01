@@ -1,0 +1,3 @@
+rootProject.name = 'CescaProject'
+
+include ':app'
